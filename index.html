@@ -37,6 +37,45 @@
 .slide:nth-child(3n + 1) .image-placeholder{background:linear-gradient(135deg,#d9d9d1,#c2c4bb 55%,#e7e6df)}
 .slide:nth-child(3n + 2) .image-placeholder{background:linear-gradient(135deg,#d8d4ca,#b7b8ae 55%,#e9e8e2)}
 
+
+  /* 12-column editorial grid system — tuned for 16:9 desktop screens */
+  :root{--grid-cols:12;--grid-gap:clamp(12px,1.1vw,20px);--page-gutter:clamp(24px,4.2vw,76px);--content-max:1600px}
+  html,body{max-width:100%;overflow-x:clip}
+  .wrap{width:min(var(--content-max),calc(100% - (var(--page-gutter) * 2)));margin-inline:auto}
+  .nav{padding-inline:var(--page-gutter)}
+  .hero,.section>.wrap{position:relative}
+  .hero-meta,.hero-bottom{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--grid-gap)}
+  .hero-meta>*:first-child{grid-column:1 / span 6}
+  .hero-meta>*:last-child{grid-column:10 / span 3;text-align:right}
+  .hero-bottom>p:first-child{grid-column:1 / span 7;max-width:none}
+  .hero-bottom>.small{grid-column:9 / span 4;max-width:340px}
+  .section-head{grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--grid-gap)}
+  .section-head>.index{grid-column:1 / span 2}
+  .section-head>div:nth-child(2){grid-column:3 / span 8;min-width:0}
+  .timeline{grid-template-columns:repeat(12,minmax(0,1fr))}
+  .time-item{grid-column:span 2;min-width:0;overflow-wrap:anywhere}
+  .evo-intro,.evo-statement{grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--grid-gap)}
+  .evo-intro>*:first-child,.evo-statement>*:first-child{grid-column:1 / span 2}
+  .evo-intro>*:nth-child(2),.evo-statement>*:nth-child(2){grid-column:3 / span 9;min-width:0}
+  .projects{grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--grid-gap);row-gap:clamp(24px,3vw,44px)}
+  .project{grid-column:span 6;min-width:0}
+  .project-visual{width:100%;max-width:100%}
+  .worktype-block{width:min(var(--content-max),calc(100% - (var(--page-gutter) * 2)));margin:clamp(60px,8vw,100px) auto 0;padding:28px 0 0;min-width:0}
+  .worktype-heading{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--grid-gap);align-items:start}
+  .worktype-heading>.eyebrow{grid-column:1 / span 2;max-width:100%;overflow-wrap:anywhere}
+  .worktype-heading>h3{grid-column:3 / span 6;min-width:0;max-width:100%}
+  .worktype-heading>.lede{grid-column:9 / span 4;min-width:0;max-width:100%;margin-top:0}
+  .worktypes{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:var(--grid-gap);width:100%;min-width:0}
+  .worktype{grid-column:span 3;min-width:0;width:100%;max-width:100%;padding:clamp(12px,1.15vw,20px);overflow:hidden}
+  .worktype h3,.worktype .tiny,.worktype .kind{max-width:100%;overflow-wrap:anywhere}
+  .worktype .art{width:100%;min-width:0}
+  .ownership-orbit,.ownership-core-row,.ownership-footer,.capabilities,.contact-bottom{min-width:0}
+  img,svg,video,canvas{max-width:100%}
+  @media (min-width:1600px){.hero h1{font-size:clamp(120px,8.2vw,166px)}.hero-image{height:min(37vw,680px)}.worktype{min-height:300px}}
+  @media(max-width:1100px){.worktype{grid-column:span 6}.worktype-heading>.eyebrow{grid-column:1 / span 2}.worktype-heading>h3{grid-column:3 / span 10}.worktype-heading>.lede{grid-column:3 / span 10;margin-top:8px}.time-item{grid-column:span 4}.hero-bottom>p:first-child{grid-column:1 / span 7}.hero-bottom>.small{grid-column:9 / span 4}}
+  @media(max-width:760px){.hero-meta{grid-template-columns:1fr 1fr}.hero-meta>*:first-child,.hero-meta>*:last-child{grid-column:auto;text-align:left}.hero-bottom{grid-template-columns:1fr}.hero-bottom>p:first-child,.hero-bottom>.small{grid-column:1}.section-head{grid-template-columns:1fr}.section-head>.index,.section-head>div:nth-child(2){grid-column:1}.timeline{grid-template-columns:repeat(2,minmax(0,1fr))}.time-item{grid-column:span 1}.evo-intro,.evo-statement{grid-template-columns:1fr}.evo-intro>*:first-child,.evo-statement>*:first-child,.evo-intro>*:nth-child(2),.evo-statement>*:nth-child(2){grid-column:1}.projects{grid-template-columns:1fr}.project{grid-column:1}.worktype-heading{grid-template-columns:1fr}.worktype-heading>.eyebrow,.worktype-heading>h3,.worktype-heading>.lede{grid-column:1}.worktype{grid-column:span 6}.worktypes{gap:10px}}
+  @media(max-width:460px){.worktype{grid-column:span 6}.worktype-block{width:calc(100% - 36px)}.worktype-heading>h3{font-size:32px}}
+
   </style>
   <style>
    /* Career evolution — reference-led infographic treatment */
